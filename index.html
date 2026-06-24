@@ -1,206 +1,547 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>محمد علي دشتي</title>
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Tahoma,sans-serif;
-scroll-behavior:smooth;
-}
-body{
-background:#111;
-color:#fff;
-line-height:1.8;
-}
-header{
-background:linear-gradient(135deg,#000,#222);
-text-align:center;
-padding:70px 20px;
-border-bottom:4px solid #FFD700;
-}
-.profile{
-width:220px;
-height:220px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #FFD700;
-box-shadow:0 0 25px rgba(255,215,0,.4);
-margin-bottom:25px;
-}
-h1{
-font-size:3rem;
-color:#FFD700;
-}
-.subtitle{
-font-size:1.2rem;
-margin-top:10px;
-color:#ddd;
-}
-.about{
-max-width:800px;
-margin:20px auto 0;
-color:#ccc;
-}
-section{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
-}
-h2{
-color:#FFD700;
-margin-bottom:25px;
-font-size:2rem;
-}
-.card{
-background:#1a1a1a;
-padding:25px;
-border-radius:15px;
-margin-bottom:20px;
-border-right:5px solid #FFD700;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-}
-.work{
-background:#1a1a1a;
-padding:25px;
-border-radius:15px;
-text-align:center;
-transition:.3s;
-}
-.work:hover{
-transform:translateY(-6px);
-}
-.social{
-text-align:center;
-}
-.social a{
-display:inline-block;
-background:#FFD700;
-color:#000;
-padding:12px 20px;
-margin:8px;
-border-radius:10px;
-font-weight:bold;
-text-decoration:none;
-}
-.tip{
-background:#FFD700;
-color:#000;
-padding:20px;
-border-radius:15px;
-font-weight:bold;
-text-align:center;
-}
-footer{
-background:#000;
-text-align:center;
-padding:30px;
-border-top:4px solid #FFD700;
-margin-top:40px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد علي دشتي | الموقع الشخصي</title>
+    <!-- Google Fonts للخطوط العربية والأيقونات -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --gold: #d4af37;
+            --gold-hover: #f3e5ab;
+            --text-light: #ffffff;
+            --text-muted: #aaaaaa;
+            --accent-gradient: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* --- الشاشة الرئيسية الشبيهة بالتطبيق --- */
+        .app-header {
+            text-align: center;
+            padding: 30px 10px 15px 10px;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .profile-name {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-titles {
+            font-size: 14px;
+            color: var(--gold);
+            font-weight: 600;
+            word-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .social-intro {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        /* أزرار منصات التواصل الكبيرة */
+        .social-buttons-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: var(--accent-gradient);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-social i {
+            font-size: 20px;
+        }
+
+        .btn-social .social-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-social:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        /* ألوان أيقونات التواصل */
+        .btn-instagram i { color: #e1306c; }
+        .btn-snapchat i { color: #fffc00; text-shadow: 0 0 2px #000; }
+        .btn-tiktok i { color: #00f2fe; }
+
+        /* أزرار التنقل بين الأقسام */
+        .nav-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .btn-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--bg-dark);
+            background: var(--gold-gradient);
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.2s, opacity 0.2s;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-nav i {
+            font-size: 18px;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        /* --- الأقسام التفصيلية السفلية --- */
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to left, transparent, rgba(212, 175, 55, 0.3), transparent);
+            margin: 40px 0;
+        }
+
+        .app-section {
+            padding-top: 10px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* قسم الأعمال المؤقت */
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .work-card {
+            background: var(--accent-gradient);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px 15px;
+            border-radius: 16px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .work-card i {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .work-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        /* خط زمني احترافي للعمل التطوعي */
+        .timeline {
+            position: relative;
+            padding-right: 20px;
+            border-right: 2px solid rgba(212, 175, 55, 0.2);
+            margin-right: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            right: -27px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            border: 2px solid var(--gold);
+            transition: background 0.3s;
+        }
+
+        .timeline-item.active::before {
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold);
+        }
+
+        .timeline-content {
+            background: var(--accent-gradient);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 14px;
+        }
+
+        .timeline-content h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .timeline-badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .badge-current {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        .badge-past {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+        }
+
+        .timeline-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* قسم التحديثات المستقبلي */
+        .updates-placeholder {
+            background: var(--accent-gradient);
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .updates-placeholder i {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
+
+        /* بطاقة نصيحة اليوم الـ 30 */
+        .quote-card {
+            background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .quote-card i.quote-icon {
+            font-size: 20px;
+            color: var(--gold);
+            opacity: 0.3;
+            margin-bottom: 8px;
+        }
+
+        #quote-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e0e0e0;
+            font-style: italic;
+        }
+
+        /* التذييل السفلي */
+        .app-footer {
+            text-align: center;
+            padding: 40px 10px 20px 10px;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* زر للعودة السريعة للأعلى */
+        .back-to-top {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .btn-top {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .btn-top:hover { color: var(--gold); }
+    </style>
 </head>
 <body>
-<header>
-<img src="1F4215BB-4582-41B2-A34B-992944B227E1.jpeg" class="profile">
-<h1>محمد علي دشتي</h1>
-<p class="subtitle">
-إعلامي • مصور • عضو فريق الكويت تستحق
-</p>
-<p class="about">
-شغوف بالإعلام والتصوير وصناعة المحتوى، وأسعى إلى توثيق الفعاليات والمبادرات المجتمعية بصورة احترافية تعكس جودة العمل وأثره.
-</p>
-</header>
-<section>
-<h2>نبذة عني</h2>
-<div class="card">
-محمد علي دشتي، إعلامي ومصور وعضو في فريق الكويت تستحق، مهتم بالتغطيات الإعلامية وصناعة المحتوى والتوثيق البصري للفعاليات والأنشطة المختلفة.
-</div>
-</section>
-<section>
-<h2>الأعمال</h2>
-<div class="grid">
-<div class="work">
-📸<br><br>
-التصوير
-</div>
-<div class="work">
-🎤<br><br>
-الإعلام
-</div>
-<div class="work">
-🎥<br><br>
-التغطيات
-</div>
-<div class="work">
-💡<br><br>
-صناعة المحتوى
-</div>
-</div>
-</section>
-<section>
-<h2>العمل التطوعي</h2>
-<div class="card">
-✅ عضو حالي في فريق الكويت تستحق.تحت قيادة قائد الفريق (الوالد)
-</div>
-<div class="card">
-⭐ عضو سابق في فريق فخر الكويت.
-</div>
-<div class="card">
-⭐ عضو سابق في فريق كويتنا أمانة.
-</div>
-<div class="card">
-شاركت في العديد من المبادرات والأنشطة التطوعي 
-</div>
-</section>
-<section>
-<h2>آخر التحديثات</h2>
-<div class="card">
-سيتم نشر أحدث الأعمال والتغطيات والمشاركات الإعلامية هنا باستمرار.
-</div>
-</section>
-<section>
-<h2>نصيحة اليوم</h2>
-<div class="tip" id="tip"></div>
-<script>
-const tips = [
-"الاستمرارية أهم من البداية القوية.",
-"استثمر وقتك فيما يطور مهاراتك.",
-"التطوع يصنع أثراً لا ينسى.",
-"الصورة الجيدة تحكي قصة كاملة.",
-"كن إيجابياً مهما كانت الظروف.",
-"النجاح يبدأ بخطوة صغيرة.",
-"اصنع أثرك أينما كنت.",
-"كل تجربة تضيف لك خبرة جديدة."
-];
-document.getElementById("tip").innerHTML =
-tips[Math.floor(Math.random()*tips.length)];
-</script>
-</section>
-<section>
-<h2>تابعني على منصات التواصل</h2>
-<div class="social">
-<a href="https://instagram.com/m.alidashti2" target="_blank">
-📸 Instagram
-</a>
-<a href="https://snapchat.com/add/kmbs16" target="_blank">
-👻 Snapchat
-</a>
-<a href="https://tiktok.com/@bds.17x" target="_blank">
-🎵 TikTok
-</a>
-</div>
-</section>
-<footer>
-© 2022026 محمد علي دشتي - جميع الحقوق محفوظة
-</footer>
+
+    <div class="container">
+
+        <!-- ================= الشاشة الرئيسية الفورية ================= -->
+        <header class="app-header">
+            <div class="profile-img-container">
+                <!-- تم الاحتفاظ باسم الصورة الخاص بك بدقة هنا -->
+                <img src="1F4215BB-4582-41B2-A34B-992944B227E1.jpeg" alt="محمد علي دشتي" class="profile-img">
+            </div>
+            <h1 class="profile-name">محمد علي دشتي</h1>
+            <div class="profile-titles">إعلامي | مصور | عضو فريق الكويت تستحق</div>
+            
+            <p class="social-intro">
+                يسعدني متابعتكم على حساباتي الرسمية للاطلاع على آخر الأعمال والتغطيات واليوميات والمحتوى الجديد.
+            </p>
+        </header>
+
+        <!-- أزرار شبكات التواصل الكبيرة (تابعني) -->
+        <section class="social-buttons-grid">
+            <a href="https://www.instagram.com/m.alidashti2" target="_blank" class="btn-social btn-instagram">
+                <div class="social-left">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </div>
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a href="https://www.snapchat.com/add/kmbs16" target="_blank" class="btn-social btn-snapchat">
+                <div class="social-left">
+                    <i class="fab fa-snapchat"></i>
+                    <span>Snapchat</span>
+                </div>
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a href="https://www.tiktok.com/@bds.17x" target="_blank" class="btn-social btn-tiktok">
+                <div class="social-left">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </div>
+                <i class="fas fa-chevron-left"></i>
+            </a>
+        </section>
+
+        <!-- أزرار التنقل الكبيرة للأقسام بالأسفل -->
+        <nav class="nav-cards-grid">
+            <a href="#my-work" class="btn-nav">
+                <i class="fas fa-camera"></i>
+                <span>📷 أعمالي</span>
+            </a>
+            <a href="#my-volunteer" class="btn-nav">
+                <i class="fas fa-hands-helping"></i>
+                <span>🤝 رحلتي التطوعية</span>
+            </a>
+            <a href="#my-updates" class="btn-nav">
+                <i class="fas fa-newspaper"></i>
+                <span>📰 آخر التحديثات</span>
+            </a>
+        </nav>
+
+        <!-- ================= الأقسام التفصيلية المضافة للأسفل ================= -->
+        
+        <hr class="section-divider">
+
+        <!-- قسم الأعمال -->
+        <section id="my-work" class="app-section">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> مجالات العمل</h2>
+            <div class="work-grid">
+                <div class="work-card">
+                    <i class="fas fa-camera-retro"></i>
+                    <h3>التصوير</h3>
+                </div>
+                <div class="work-card">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>الإعلام</h3>
+                </div>
+                <div class="work-card">
+                    <i class="fas fa-video"></i>
+                    <h3>التغطيات</h3>
+                </div>
+                <div class="work-card">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>صناعة المحتوى</h3>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- قسم العمل التطوعي كـ Timeline -->
+        <section id="my-volunteer" class="app-section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> مسيرتي التطوعية</h2>
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-content">
+                        <h3>فريق الكويت تستحق <span class="timeline-badge badge-current">حالي</span></h3>
+                        <p class="timeline-desc">المشاركة الفعالة في تنظيم المبادرات المجتمعية والوطنية تحت قيادة الوالد (قائد الفريق).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>فريق فخر الكويت <span class="timeline-badge badge-past">سابق</span></h3>
+                        <p class="timeline-desc">عضو مساهم في تقديم الأنشطة التطوعية والخدمات المجتمعية.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>فريق كويتنا أمانة <span class="timeline-badge badge-past">سابق</span></h3>
+                        <p class="timeline-desc">بدايات العمل التطوعي والمشاركة في الحملات التوعوية والوطنية المختلفة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- قسم آخر التحديثات المستقبلي -->
+        <section id="my-updates" class="app-section">
+            <h2 class="section-title"><i class="fas fa-bullhorn"></i> آخر التحديثات</h2>
+            <div class="updates-placeholder">
+                <i class="fas fa-hourglass-half"></i>
+                <p>قريباً.. سيتم إضافة الأعمال الجديدة، التغطيات الحصرية والمشاركات القادمة هنا.</p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- قسم نصيحة اليوم (25-30 نصيحة مدمجة تتغير عشوائياً) -->
+        <section class="app-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> نصيحة اليوم</h2>
+            <div class="quote-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <p id="quote-text">جاري تحميل نصيحة ملهمة لك...</p>
+            </div>
+        </section>
+
+        <!-- العودة للأعلى والتذييل -->
+        <div class="back-to-top">
+            <button onclick="window.scrollTo(0,0);" class="btn-top"><i class="fas fa-arrow-up"></i> العودة للقمة</button>
+        </div>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 محمد علي دشتي. جميع الحقوق محفوظة.</p>
+        </footer>
+
+    </div>
+
+    <!-- ميكانيكية اختيار النصائح العشوائية الذكية (30 نصيحة ممتازة) -->
+    <script>
+        const tips = [
+            "العدسة تلتقط ما تراه بعينك، لكن الشغف يلتقط ما تشعر به بقلبك.",
+            "في الإعلام والتصوير، التوقيت المناسب هو كل شيء.",
+            "العمل التطوعي لا يحتاج إلى وقت فراغ، بل يحتاج إلى قلبٍ نابض بالخير.",
+            "أفضل إضاءة لتصوير رائع هي الإضاءة التي تصنعها بفكرك قبل معداتك.",
+            "المحتوى الناجح هو الذي يلامس عقول الناس ويترك فيهم أثراً طيباً.",
+            "العطاء التطوعي يترك أثراً في روحك قبل أن يتركه في حياة الآخرين.",
+            "الصورة الناجحة تختصر ألف كلمة وتختزل تاريخاً كاملاً.",
+            "التطوير المستمر لمهاراتك هو رأس مالك الحقيقي كصانع محتوى.",
+            "التميز في الإعلام يبدأ من احترام عقلية المتابع وتقديم القيمة له.",
+            "لا تنتظر اللقطة المثالية، بل اصنع أنت برؤيتك اللقطة المثالية.",
+            "صناعة المحتوى رحلة استمرار، والنجاح لا يأتي بين يوم وليلة.",
+            "خدمة الوطن من خلال العمل التطوعي شرف يحمله المخلصون فقط.",
+            "زاوية التصوير المبتكرة تغير المفهوم العادي للأشياء تماماً.",
+            "كن مؤثراً بأفعالك وتغطياتك الإيجابية، فالإعلام رسالة وأمانة.",
+            "العمل بروح الفريق الواحد في المبادرات التطوعية يضاعف الإنجاز.",
+            "كل لقطة تأخذها هي جزء من قصتك المهنية، فاجعل قصتك مبهرة.",
+            "البساطة في التصميم وصناعة المحتوى هي قمة الفخامة والاحترافية.",
+            "أعظم استثمار هو ما تقدمه لخدمة وتطوير مجتمعك ووطنك الكويتي.",
+            "التفاصيل الصغيرة خلف الكاميرا هي التي تصنع الفارق الكبير أمامها.",
+            "الجمهور لا ينسى المحتوى الصادق والعفوي، كن على طبيعتك دائماً.",
+            "سر النجاح الإعلامي يكمن في الشغف الدائم للتعلم واكتساب مهارات جديدة.",
+            "الصورة الاحترافية تعتمد على الزاوية والإحساس، وليس فقط على ثمن الكاميرا.",
+            "التطوع يصنع القادة، ويزيد من نضج الشخصية وتوسيع الآفاق.",
+            "قبل أن تضغط زر التصوير، تأكد أنك تعرف القصة التي تريد إيصالها.",
+            "الإعلامي المتميز هو من يبحث عن الحقيقة ويسلط الضوء على النماذج المشرفة.",
+            "اجعل حساباتك منصة لنشر الطاقة الإيجابية والتوثيق الهادف والمميز.",
+            "التخطيط الجيد قبل أي تغطية ميدانية يضمن لك نصف النجاح مسبقاً.",
+            "احرص على بناء هويتك البصرية الخاصة ليعرف الناس أعمالك بمجرد رؤيتها.",
+            "العطاء بلا مقابل في الفرق التطوعية يفتح لك أبواباً واسعة من التوفيق والنجاح.",
+            "ثق برؤيتك الإبداعية، فالإبداع هو أن ترى ما يراه الجميع وتفكر بشكل مختلف."
+        ];
+
+        function showRandomTip() {
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            document.getElementById('quote-text').innerText = tips[randomIndex];
+        }
+
+        // تشغيل الدالة فور فتح الصفحة
+        window.onload = showRandomTip;
+    </script>
 </body>
 </html>
