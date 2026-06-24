@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد علي دشتي | الموقع الشخصي</title>
-    <!-- Google Fonts للخطوط العربية والأيقونات -->
+    <title>محمد علي dشتي | الموقع الشخصي</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -187,7 +186,7 @@
             gap: 10px;
         }
 
-        /* قسم الأعمال المؤقت */
+        /* قسم الأعمال */
         .work-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -200,7 +199,6 @@
             padding: 20px 15px;
             border-radius: 16px;
             text-align: center;
-            transition: border-color 0.3s;
         }
 
         .work-card i {
@@ -215,7 +213,7 @@
             color: var(--text-light);
         }
 
-        /* خط زمني احترافي للعمل التطوعي */
+        /* خط زمني للعمل التطوعي */
         .timeline {
             position: relative;
             padding-right: 20px;
@@ -225,7 +223,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
 
         .timeline-item::before {
@@ -238,7 +236,6 @@
             border-radius: 50%;
             background: var(--bg-dark);
             border: 2px solid var(--gold);
-            transition: background 0.3s;
         }
 
         .timeline-item.active::before {
@@ -260,6 +257,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 5px;
         }
 
         .timeline-badge {
@@ -283,7 +281,59 @@
         .timeline-desc {
             font-size: 12px;
             color: var(--text-muted);
-            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* كروت معرض الصور الاحترافي مع الكلام */
+        .volunteer-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .gallery-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-img-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-img-wrapper i {
+            font-size: 32px;
+            color: rgba(212, 175, 55, 0.2);
+        }
+
+        .gallery-text-zone {
+            padding: 12px;
+        }
+
+        .gallery-photo-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .gallery-photo-desc {
+            font-size: 12px;
+            color: #dddddd;
+            line-height: 1.4;
         }
 
         /* قسم التحديثات المستقبلي */
@@ -304,7 +354,7 @@
             opacity: 0.7;
         }
 
-        /* بطاقة نصيحة اليوم الـ 30 */
+        /* بطاقة نصيحة اليوم */
         .quote-card {
             background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
             border: 1px solid rgba(212, 175, 55, 0.15);
@@ -312,7 +362,6 @@
             border-radius: 16px;
             text-align: center;
             margin-top: 20px;
-            position: relative;
         }
 
         .quote-card i.quote-icon {
@@ -329,16 +378,6 @@
             font-style: italic;
         }
 
-        /* التذييل السفلي */
-        .app-footer {
-            text-align: center;
-            padding: 40px 10px 20px 10px;
-            font-size: 11px;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-        }
-
-        /* زر للعودة السريعة للأعلى */
         .back-to-top {
             text-align: center;
             margin-top: 25px;
@@ -352,16 +391,21 @@
             font-weight: 600;
         }
         .btn-top:hover { color: var(--gold); }
+
+        .app-footer {
+            text-align: center;
+            padding: 40px 10px 20px 10px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
 
-        <!-- ================= الشاشة الرئيسية الفورية ================= -->
         <header class="app-header">
             <div class="profile-img-container">
-                <!-- تم الاحتفاظ باسم الصورة الخاص بك بدقة هنا -->
                 <img src="1F4215BB-4582-41B2-A34B-992944B227E1.jpeg" alt="محمد علي دشتي" class="profile-img">
             </div>
             <h1 class="profile-name">محمد علي دشتي</h1>
@@ -372,7 +416,6 @@
             </p>
         </header>
 
-        <!-- أزرار شبكات التواصل الكبيرة (تابعني) -->
         <section class="social-buttons-grid">
             <a href="https://www.instagram.com/m.alidashti2" target="_blank" class="btn-social btn-instagram">
                 <div class="social-left">
@@ -397,7 +440,6 @@
             </a>
         </section>
 
-        <!-- أزرار التنقل الكبيرة للأقسام بالأسفل -->
         <nav class="nav-cards-grid">
             <a href="#my-work" class="btn-nav">
                 <i class="fas fa-camera"></i>
@@ -413,11 +455,8 @@
             </a>
         </nav>
 
-        <!-- ================= الأقسام التفصيلية المضافة للأسفل ================= -->
-        
         <hr class="section-divider">
 
-        <!-- قسم الأعمال -->
         <section id="my-work" class="app-section">
             <h2 class="section-title"><i class="fas fa-briefcase"></i> مجالات العمل</h2>
             <div class="work-grid">
@@ -442,34 +481,62 @@
 
         <hr class="section-divider">
 
-        <!-- قسم العمل التطوعي كـ Timeline -->
         <section id="my-volunteer" class="app-section">
             <h2 class="section-title"><i class="fas fa-heart"></i> مسيرتي التطوعية</h2>
             <div class="timeline">
+                
                 <div class="timeline-item active">
                     <div class="timeline-content">
                         <h3>فريق الكويت تستحق <span class="timeline-badge badge-current">حالي</span></h3>
-                        <p class="timeline-desc">المشاركة الفعالة في تنظيم المبادرات المجتمعية والوطنية تحت قيادة الوالد (قائد الفريق).</p>
+                        <p class="timeline-desc">المشاركة الفعالة في تنظيم المبادرات المجتمعية والوطنية تحت قيادة الوالد.</p>
+                        
+                        <div class="volunteer-gallery">
+                            
+                            <div class="gallery-card">
+                                <div class="gallery-img-wrapper">
+                                    <img src="1F4215BB-4582-41B2-A34B-992944B227E1.jpeg" alt="تغطية الفعالية">
+                                </div>
+                                <div class="gallery-text-zone">
+                                    <h4 class="gallery-photo-title">📍 تغطية المبادرة الوطنية الأولى</h4>
+                                    <p class="gallery-photo-desc">جانب من توثيق وتصوير الفعاليات الميدانية للفريق في خدمة أبناء الكويت الحبيبة.</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>فريق فخر الكويت <span class="timeline-badge badge-past">سابق</span></h3>
                         <p class="timeline-desc">عضو مساهم في تقديم الأنشطة التطوعية والخدمات المجتمعية.</p>
+                        
+                        <div class="volunteer-gallery">
+                            <div class="gallery-card">
+                                <div class="gallery-img-wrapper">
+                                    <i class="fas fa-camera"></i> </div>
+                                <div class="gallery-text-zone">
+                                    <h4 class="gallery-photo-title">📸 تكريم المتطوعين</h4>
+                                    <p class="gallery-photo-desc">هنا تكتب سطر أو سطرين يشرحون هذي الصورة والذكرى الجميلة مع هذا الفريق.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+                
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>فريق كويتنا أمانة <span class="timeline-badge badge-past">سابق</span></h3>
-                        <p class="timeline-desc">بدايات العمل التطوعي والمشاركة في الحملات التوعوية والوطنية المختلفة.</p>
+                        <p class="timeline-desc">بدايات العمل التطوعي والمشاركة في الحملات التوعوية والوطنية.</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <!-- قسم آخر التحديثات المستقبلي -->
         <section id="my-updates" class="app-section">
             <h2 class="section-title"><i class="fas fa-bullhorn"></i> آخر التحديثات</h2>
             <div class="updates-placeholder">
@@ -480,7 +547,6 @@
 
         <hr class="section-divider">
 
-        <!-- قسم نصيحة اليوم (25-30 نصيحة مدمجة تتغير عشوائياً) -->
         <section class="app-section">
             <h2 class="section-title"><i class="fas fa-lightbulb"></i> نصيحة اليوم</h2>
             <div class="quote-card">
@@ -489,7 +555,6 @@
             </div>
         </section>
 
-        <!-- العودة للأعلى والتذييل -->
         <div class="back-to-top">
             <button onclick="window.scrollTo(0,0);" class="btn-top"><i class="fas fa-arrow-up"></i> العودة للقمة</button>
         </div>
@@ -500,7 +565,6 @@
 
     </div>
 
-    <!-- ميكانيكية اختيار النصائح العشوائية الذكية (30 نصيحة ممتازة) -->
     <script>
         const tips = [
             "العدسة تلتقط ما تراه بعينك، لكن الشغف يلتقط ما تشعر به بقلبك.",
@@ -540,7 +604,6 @@
             document.getElementById('quote-text').innerText = tips[randomIndex];
         }
 
-        // تشغيل الدالة فور فتح الصفحة
         window.onload = showRandomTip;
     </script>
 </body>
