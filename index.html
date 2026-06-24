@@ -3,23 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>موقعي</title>
+<title>محمد علي دشتي</title>
+
 <style>
-body{
-font-family:Arial,sans-serif;
-text-align:center;
-padding:50px;
-background:#f5f5f5;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,sans-serif;
 }
-h1{
-color:#333;
+
+body{
+background:#111;
+color:white;
+line-height:1.8;
+}
+
+header{
+background:#000;
+padding:80px 20px;
+text-align:center;
+border-bottom:4px solid #FFD700;
+}
+
+header h1{
+font-size:3rem;
+color:#FFD700;
+}
+
+header p{
+font-size:1.2rem;
+margin-top:10px;
+}
+
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+color:#FFD700;
+margin-bottom:20px;
+font-size:2rem;
+}
+
+.card{
+background:#1a1a1a;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+border-right:5px solid #FFD700;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.work{
+background:#1a1a1a;
+padding:25px;
+border-radius:15px;
+text-align:center;
+transition:.3s;
+}
+
+.work:hover{
+transform:translateY(-5px);
+}
+
+.tip-box{
+background:#FFD700;
+color:#000;
+padding:20px;
+border-radius:15px;
+font-weight:bold;
+font-size:1.1rem;
+}
+
+footer{
+background:#000;
+text-align:center;
+padding:30px;
+margin-top:40px;
+border-top:4px solid #FFD700;
+}
+
+a{
+color:#FFD700;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
 }
 </style>
 </head>
+
 <body>
 
-<h1>أهلاً بكم في موقعي</h1>
-<p>قريباً سيتم إضافة الصور والمحتوى.</p>
+<header>
+<h1>محمد علي دشتي</h1>
+<p>إعلامي | مصور | عضو فريق الكويت تستحق</p>
+</header>
+
+<section>
+<h2>نبذة عني</h2>
+
+<div class="card">
+محمد علي دشتي، إعلامي ومصور مهتم بالتغطيات الإعلامية وصناعة المحتوى
+وتوثيق الفعاليات والأنشطة المختلفة، وأسعى دائماً لتقديم محتوى احترافي
+يعكس جودة العمل وروح الإبداع.
+</div>
+</section>
+
+<section>
+<h2>الأعمال</h2>
+
+<div class="grid">
+
+<div class="work">
+<h3>التصوير</h3>
+<p>تصوير الفعاليات والمناسبات والتغطيات المختلفة.</p>
+</div>
+
+<div class="work">
+<h3>الإعلام</h3>
+<p>إعداد وتقديم المحتوى الإعلامي باحترافية.</p>
+</div>
+
+<div class="work">
+<h3>التغطيات</h3>
+<p>تغطية الأنشطة والبرامج والمبادرات المجتمعية.</p>
+</div>
+
+<div class="work">
+<h3>صناعة المحتوى</h3>
+<p>إنتاج محتوى إبداعي للمنصات الرقمية.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>الفرق التطوعية</h2>
+
+<div class="card">
+✅ عضو حالي في فريق الكويت تستحق.
+</div>
+
+<div class="card">
+⭐ عضو سابق في فريق فخر الكويت.
+</div>
+
+<div class="card">
+⭐ عضو سابق في فريق كويتنا أمانة.
+</div>
+
+<div class="card">
+شاركت في العديد من المبادرات والأنشطة التطوعية تحت قيادة قائد الفريق (الوالد).
+</div>
+
+</section>
+
+<section>
+<h2>آخر التحديثات</h2>
+
+<div class="card">
+سيتم إضافة أحدث الأعمال والتغطيات هنا بشكل مستمر.
+</div>
+
+</section>
+
+<section>
+<h2>نصيحة اليوم</h2>
+
+<div class="tip-box" id="tip"></div>
+
+<script>
+const tips = [
+"الاستمرارية أهم من البداية القوية.",
+"استثمر وقتك فيما يطور مهاراتك.",
+"التطوع يصنع أثراً لا ينسى.",
+"الصورة الجيدة تحكي قصة كاملة.",
+"كن إيجابياً مهما كانت الظروف.",
+"النجاح يبدأ بخطوة صغيرة."
+];
+
+document.getElementById("tip").innerHTML =
+tips[Math.floor(Math.random()*tips.length)];
+</script>
+
+</section>
+
+<section>
+<h2>تواصل معي</h2>
+
+<div class="card">
+يمكن إضافة حسابات التواصل الاجتماعي هنا لاحقاً.
+</div>
+
+</section>
+
+<footer>
+<p>© 2025 محمد علي دشتي - جميع الحقوق محفوظة</p>
+</footer>
 
 </body>
 </html>
