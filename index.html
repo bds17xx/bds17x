@@ -66,10 +66,10 @@
             position: relative;
         }
 
-        /* تكبير الصورة الشخصية بناءً على طلب بو جاسم وجعلها فخمة جداً */
+        /* تكبير الصورة الشخصية وجعلها فخمة جداً */
         .profile-img-container {
             position: relative;
-            width: 165px; /* تم التكبير من 130px إلى 165px لشكل بارز وأكثر فخامة */
+            width: 165px; 
             height: 165px;
             margin: 0 auto 25px auto;
             animation: fadeInScale 0.8s var(--card-smooth);
@@ -129,7 +129,7 @@
             line-height: 1.5;
         }
 
-        /* كروت الإحصائيات والأرقام السريعة السوبر احترافية */
+        /* كروت الإحصائيات والأرقام السريعة */
         .stats-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -277,7 +277,7 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        /* كروت مجالات العمل المطورة */
+        /* كروت مجالات العمل */
         .work-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -384,7 +384,7 @@
             margin-bottom: 18px;
         }
 
-        /* كروت معرض الصور السوبر احترافية (Glass Card) */
+        /* كروت معرض الصور المطورة (لتظهر كاملة بدون أي قص) */
         .volunteer-gallery {
             display: flex;
             flex-direction: column;
@@ -406,17 +406,23 @@
             border-color: rgba(212, 175, 55, 0.2);
         }
 
+        /* التعديل السحري: جعل الصور تظهر كاملة وواضحة بدون قص */
         .gallery-img-wrapper {
             width: 100%;
-            aspect-ratio: 16 / 10;
+            height: auto;
+            max-height: 350px;
             background: #121215;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .gallery-img-wrapper img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
+            max-height: 350px;
         }
 
         .gallery-text-zone {
@@ -450,7 +456,7 @@
             border-radius: 6px;
         }
 
-        /* كرت نصيحة اليوم الفخم الزجاجي */
+        /* كرت نصيحة اليوم الفخم */
         .quote-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(212, 175, 55, 0.2);
@@ -478,7 +484,7 @@
             line-height: 1.5;
         }
 
-        /* أنيميشن الدخول الناعم للكامل */
+        /* أنيميشن الدخول */
         @keyframes fadeInScale {
             0% { opacity: 0; transform: scale(0.92); }
             100% { opacity: 1; transform: scale(1); }
@@ -503,10 +509,27 @@
 
         .app-footer {
             text-align: center;
-            padding: 50px 10px 30px 10px;
+            padding: 50px 10px 15px 10px;
             font-size: 11px;
             color: var(--text-muted);
             letter-spacing: 0.5px;
+        }
+
+        /* ستايل مخصص لعداد الزوار ليتناسب مع فخامة الموقع */
+        .counter-box {
+            margin-top: 15px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            padding: 10px 20px;
+            border-radius: 14px;
+            backdrop-filter: blur(8px);
+        }
+        .counter-box p {
+            margin-bottom: 6px;
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 600;
         }
     </style>
 </head>
@@ -621,7 +644,7 @@
                                 </div>
                                 <div class="gallery-text-zone">
                                     <h4 class="gallery-photo-title">🩸 حملة التبرع بالدم</h4>
-                                    <p class="gallery-photo-desc">جانب من مشاركتي وتنظيمي الميداني في حملة التبرع بالدم الإنسانية الكبرى مع فريق الكويت تستحق الوطني.</p>
+                                    <p class="gallery-photo-desc">جانب من مشاركتي وتنظيمي الميداني في حملة التبرع بالدم الإنسانية الكبرى مع فريق الكويت تستحق.</p>
                                     <span class="gallery-photo-date"><i class="far fa-calendar-alt"></i> 5/6/2026</span>
                                 </div>
                             </div>
@@ -632,7 +655,7 @@
                                 </div>
                                 <div class="gallery-text-zone">
                                     <h4 class="gallery-photo-title">🌙 مشاركة رسمية مع الهلال الأحمر</h4>
-                                    <p class="gallery-photo-desc">تشرفت بالتواجد والعمل الإنساني والمشاركة مع الوالد الإعلامي القدير علي دشتي والناشط حسن بوصالح في المبادرة.</p>
+                                    <p class="gallery-photo-desc">تشرفنا بالعمل التطوعي مع الهلال الأحمر في القطاع الإنساني والمشاركة مع الوالد الإعلامي القدير علي دشتي والناشط حسن بوصالح في المبادرة.</p>
                                     <span class="gallery-photo-date"><i class="far fa-calendar-alt"></i> 28/2/2026</span>
                                 </div>
                             </div>
@@ -740,6 +763,15 @@
 
         <footer class="app-footer">
             <p>&copy; 2026 محمد علي دشتي. النسخة الاحترافية الفخمة. جميع الحقوق محفوظة بالكامل.</p>
+            
+            <div class="counter-box">
+                <p>عدد زوار الموقع</p>
+                <a href="https://www.hitwebcounter.com/convert-pdf-to-jpg" target="_blank" rel="noopener" title="get jpg from pdf">
+                <img src="https://www.hitwebcounter.com/counter/counter.php?page=21505706&amp;style=0019&amp;nbdigits=5&amp;type=page" alt="get jpg from pdf" decoding="async" style="border:0;max-width:100%;height:auto;" />
+                </a>
+                <br />
+                <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;color:#758087;text-decoration:none;font-weight:bold;">hitwebcounter</a>
+                </div>
         </footer>
 
     </div>
@@ -765,7 +797,7 @@
             "البساطة المطلقة في التصميم وصناعة المحتوى هي قمة الفخامة والاحترافية الحقيقية.",
             "أعظم استثمار في الحياة هو ما تقدمه بكل حب لخدمة وتطوير مجتمعك ووطنك الكويتي.",
             "التفاصيل الصغيرة الدقيقة خلف الكاميرا هي التي تصنع الفارق الكبير الملموس أمامها.",
-            "الجمهور الذكي لا ينسى المحتوى الصادق والعفوي، كن على طبيعتك المتميزة دائماً.",
+            "الجمهور الذكي لا ينسى المحتوى الصادق والعفوي, كن على طبيعتك المتميزة دائماً.",
             "سر النجاح الإعلامي يكمن في الشغف الدائم للتعلم المستمر واكتساب مهارات رقمية جديدة.",
             "الصورة الاحترافية تعتمد بالكامل على الزاوية والإحساس، وليس فقط على ثمن الكاميرا المستخدمة.",
             "التطوع يصنع القادة الحقيقيين، ويزيد من نضج الشخصية وتوسيع الآفاق المستقبلية.",
